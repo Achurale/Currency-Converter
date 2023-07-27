@@ -1,3 +1,5 @@
+let currencyList = document.getElementsByClassName('currency')
+
 let country_list = {
     "AED" : "AE",
     "AFN" : "AF",
