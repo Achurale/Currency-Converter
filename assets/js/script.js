@@ -11,18 +11,39 @@ function loadFlag(element) {
 }
 
 //Add ExchangeRate-API
-let url = 'https://v6.exchangerate-api.com/v6/c5de4b3eabcc6e28bbe2a088/latest/USD';
+// let url = 'https://v6.exchangerate-api.com/v6/c5de4b3eabcc6e28bbe2a088/latest/USD';
 
-for (let i = 0; i < countryDropDown.length; i++) {
-  for(let currency_code in country_list){
-      // selecting USD by default as FROM currency and NPR as TO currency
-      let selected = i == 0 ? currency_code == "USD" ? "selected" : "" : currency_code == "NPR" ? "selected" : "";
-      // creating option tag with passing currency code as a text and value
-      let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
-      // inserting options tag inside select tag
-      countryDropDown[i].insertAdjacentHTML("beforeend", optionTag);
+const OPEN_EXCHANGE_RATES_API_KEY = 'YOUR_OXR_API_KEY';
+const ZIPCODE_API_KEY = 'YOUR_ZIPCODE_API_KEY';
+fetch(`https://open.exchangerate-api.com/v6/latest?app_id=${OPEN_EXCHANGE_RATES_API_KEY}`)
+  .then((response) => response.json())
+  .then((data) => {
+    const currencies = Object.keys(data.rates);
+    const fromCurrencySelect = document.getElementById('currencyA');
+    const toCurrencySelect = document.getElementById('currencyB');
+
+    currencies.forEach((currency) => {
+      const option1 = document.createElement('option');
+      option1.text = currency;
+      fromCurrencySelect.add(option1);
+
+      const option2 = document.createElement('option');
+      option2.text = currency;
+      toCurrencySelect.add(option2);
+    });
+  });
+
+
+  function convertCurrency() {
+    const amount = document.getElementById('from').value;
+    const fromCurrency = document.getElementById('currencyA').value;
+    const toCurrency = document.getElementById('currencyB').value;
+  
+    fetch(`https://open.exchangerate-api.com/v6/convert?app_id=${OPEN_EXCHANGE_RATES_API_KEY}&from=${fromCurrency}&to=${toCurrency}&amount=${amount}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const convertedAmount = data.result.toFixed(2);
+        const resultElement = document.getElementById('converted');
+        resultElement.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+      });
   }
-  // dropList[i].addEventListener("change", e =>{
-  //     loadFlag(e.target); // calling loadFlag with passing target element as an argument
-  // });
-}
