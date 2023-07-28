@@ -23,10 +23,7 @@
                     <div class="flex flex-col items-center gap-2">
                         <div class="flex flex-col items-center">
                             <p>from</p>
-                            <select name="currencyA" class='' id="currencyA">
-                                <option value="usd">KRW</option>
-                                <option value="usd">CAD</option>
-                                <option value="usd">USD</option>
+                            <select class='' id="currencyA">
                             </select>
                         </div>
                         <input type="text" placeholder="000.00" id="from">
@@ -37,48 +34,20 @@
                     <div class="flex flex-col items-center gap-2">
                         <div class="flex flex-col items-center">
                             <p>to</p>
-                            <select name="currencyB" class='' id="currencyB"> 
-                                <option value="usd">KRW</option>
-                                <option value="usd">CAD</option>
-                                <option value="usd">USD</option>
+                            <select class='' id="currencyB"> 
                             </select>
                         </div>
                         <input type="text" placeholder="000.00" id="converted" disabled>
                     </div>
                     
                 </div>
-                <input type="button" value="Exchange" class="bg-blue-400 hover:bg-blue-500 py-3 px-4 rounded">
+                <input type="button" value="Exchange" onclick="convertCurrency()" class="bg-blue-400 hover:bg-blue-500 py-3 px-4 rounded">
                 
         </form>
     </div>
-    
-        <!-- <form class="flex flex-col gap-2 mx-auto bg-green-400 rounded py-8 px-4">
-            <div class="text-3xl text-center text-blue-800 m-4">
-                Currency Converter
-            </div>
-            currency type
-            <div class="flex flex-row">
-                <div class="mx-auto">from
-                    <select name="currencyA" id="currencyA"> 
-                        <option value="usd">USD</option>
-                    </select>
-                </div>
-                <div class="mx-auto">to
-                    <select name="currencyB" id="currencyB"> 
-                <option value="usd">USD</option>
-                </select>
-            </div>
-        </div>
-        currency values
-        <div>
-            <input type="text" placeholder="000.00" id="from">
-            <input type="button" value="Exchange" class="bg-blue-400 hover:bg-blue-500 py-2 px-2 rounded">
-            <input type="text" placeholder="000.00" id="converted" disabled>
-        </div>
-    </form> -->
 
 </body>
-
-<script href="./assets/js/script.js"></script>
-<script href="./assets/js/country-list.js"></script>
+<script src="https://v6.exchangerate-api.com/v6/c5de4b3eabcc6e28bbe2a088/latest/USD"></script>
+<script src="./assets/js/country-list.js"></script>
+<script src="./assets/js/script.js"></script>
 </html>
