@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Converter with Zip Code</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Currency Converter</h1>
+    <div class="converter">
+      <input type="number" id="amount" placeholder="Enter amount">
+      <select id="fromCurrency"></select>
+      <select id="toCurrency"></select>
+      <button onclick="convertCurrency()">Convert</button>
+    </div>
+    <div id="result"></div>
+    <div class="zipcode">
+      <input type="text" id="zipcodeInput" placeholder="Enter Zip Code">
+      <button onclick="getZipCodeDetails()">Get Zip Code Info</button>
+    </div>
+    <div id="zipcodeResult"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
