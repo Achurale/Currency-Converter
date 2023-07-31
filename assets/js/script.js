@@ -13,8 +13,29 @@ function loadFlag(element) {
 //Add ExchangeRate-API
 // let url = 'https://v6.exchangerate-api.com/v6/c5de4b3eabcc6e28bbe2a088/latest/USD';
 
-const OPEN_EXCHANGE_RATES_API_KEY = 'YOUR_OXR_API_KEY';
+
+const OPEN_EXCHANGE_RATES_API_KEY = 'c5de4b3eabcc6e28bbe2a088';
 const ZIPCODE_API_KEY = 'YOUR_ZIPCODE_API_KEY';
+
+// https://v6.exchangerate-api.com/v6/c5de4b3eabcc6e28bbe2a088/pair/EUR/GBP/12
+// fetch(`https://open.exchangerate-api.com/v6/latest?app_id=${OPEN_EXCHANGE_RATES_API_KEY}`)
+
+function callApi() {  
+  const amount = document.querySelector("#from").value;
+  const currencyA = document.querySelector("#currencyA").value
+  const currencyB = document.querySelector("#currencyB").value
+
+  fetch(`https://v6.exchangerate-api.com/v6/${OPEN_EXCHANGE_RATES_API_KEY}/pair/${currencyA}/${currencyB}/${amount}`)
+  .then(response=>response.json())
+  .then(data=>{
+
+    const convResult = data.conversion_result // 10.29 
+    const convElement = document.querySelector("#converted");
+    convElement.value = convResult;
+    console.log(data);
+  })
+}
+
 fetch(`https://open.exchangerate-api.com/v6/latest?app_id=${OPEN_EXCHANGE_RATES_API_KEY}`)
   .then((response) => response.json())
   .then((data) => {
