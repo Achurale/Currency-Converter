@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Project Traveler's Assistant</title>
+    <title>Traveler's Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
-     
+    <link rel="stylesheet" href="./assets/style/style.css">
   </head>
   
-  <body>
+  <body class="bg-yellow-100">
     
     <!-- Title of the Application -->
 
     <div id="1" >
-        <h1 class=" bg-blue-700 text-center text-4xl ">Traveler's Assistant</h1>
+        <h1 class="bg-gradient-to-r from-orange-500 to-yellow-400 text-center text-4xl p-4 underline">Traveler's Assistant</h1>
     </div>
       
 <!-- Container for the first two applications -->
 
 
-<div class="  bg-red-400 flex flex-wrap">
+<div class=" flex flex-wrap m-4">
  
-  <!-- Container for the first applications  The currency  convertor -->
+  <!-- Container for the first applications  The currency convertor -->
     
-  <div class=" bg-green-400 rounded py-8 px-4 "> 
+  <div class=" bg-orange-400 block wrapper py-8 px-4 mx-auto rounded"> 
 
-      <div class=" text-3xl  text-blue-800 text-center">
+      <div class=" text-3xl  text-center">
         Currency Converter
       </div>
       <br>
@@ -64,11 +64,11 @@
     
 <!-- Container for the second applications  The translator-->
 
-      <div class="block wrapper bg-yellow-300   max-w-fit m-auto">
+      <div class="block wrapper bg-yellow-300 rounded max-w-fit m-auto p-2">
 
 <!-- Headline in box -->
 
-        <H1 class="bg-blue-300 te1 text-2xl text-center">Language Translator</H1>
+        <H1 class="te1 text-2xl text-center">Language Translator</H1>
         <br>
 
 <!-- The languages choice menus for user -->
@@ -102,7 +102,7 @@
 
 <br>
 
-        <div class="text-input items-center ">
+        <div class="text-input items-center">
 
         <!-- Textarea for User Input -->
           <textarea  placeholder = "Enter text" spellcheck="false" class="from-text container bg-red-100
@@ -129,22 +129,22 @@
 
     <!-- Container for the third applications Notes to Remember-->
 
-    <div class=" bg-yellow-500">
-        <h1 class=" text-4xl">Notes to Remember</h1>
+    <div class=" bg-gradient-to-r from-yellow-400 to-orange-500 p-2">
+        <h1 class="text-center text-4xl">Notes to Remember</h1>
       </div> 
     </div> 
 
     <!-- Text area for notes -->
 
-<div class ="bg-yellow-100">
+<div class ="bg-yellow-100 p-4">
     <div id="notes">
       <textarea rows= "6" placeholder= " Add a note here" id="text" class =" text block p-5  w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring focus:ring-violet-300"></textarea>
       </div> 
     </div>
   
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="countries.js"></script>
-    <script src="script.js"></script>
+    <script src="./assets/script/countries.js"></script>
+    <script src="./assets/script/script.js"></script>
    
     
   </body>
