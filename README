@@ -1,16 +1,12 @@
 # The Traveler's Assistant
 
 ## Description
+This app is a combination of a currency converter and translator that you can also use to take notes which will be stored locally.
+This was intended for people who might be traveling abroad or making purchases where there isn't a shared language, and could potentially
+be used even for ordering stuff online through a website using an unfamiliar language.
 
-## Usage
+## Screenshot and Link
 
-Provide instructions and examples for use. Include screenshots as needed.
+![a screenshot of the working page with US Dollars converted to euros and a translated phrase from English to Spanish](./assets/images/screenshot.png)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-## Credits
-
+https://achurale.github.io/Currency-Converter/
